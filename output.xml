@@ -1,107 +1,404 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.11 on win32)" generated="20230704 09:59:24.513" rpa="false" schemaversion="3">
-<suite id="s1" name="My First Playwriter" source="C:\Dev\Code_Qualite_Tests\BeginnersGuide\Examples\my_first_playwriter.robot">
-<test id="s1-t1" name="My First Playwriter Robot Test" line="12">
+<robot generator="Robot 6.0.2 (Python 3.10.11 on win32)" generated="20230704 16:41:11.754" rpa="false" schemaversion="3">
+<suite id="s1" name="User Management" source="C:\Dev\Code_Qualite_Tests\TP\tp-robotframework\Examples\user_management.robot">
+<test id="s1-t1" name="Test" line="18">
+<kw name="Connection au site (Username : Admin, Password : admin123)">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230704 09:59:25.228" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<msg timestamp="20230704 09:59:25.296" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
-<status status="PASS" starttime="20230704 09:59:25.226" endtime="20230704 09:59:29.965"/>
+<msg timestamp="20230704 16:41:12.387" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20230704 16:41:12.455" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230704 16:41:12.386" endtime="20230704 16:41:18.282"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230704 16:41:18.282" endtime="20230704 16:41:18.411"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:24.423" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:18.411" endtime="20230704 16:41:24.423"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:user-name</arg>
-<arg>${LOGIN}</arg>
+<arg>name=username</arg>
+<arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:29.978" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230704 09:59:29.970" endtime="20230704 09:59:30.370"/>
+<msg timestamp="20230704 16:41:24.426" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20230704 16:41:24.424" endtime="20230704 16:41:24.660"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:password</arg>
-<arg>${PWD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:30.375" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230704 09:59:30.372" endtime="20230704 09:59:30.645"/>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:41:24.661" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20230704 16:41:24.801" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230704 16:41:24.957" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230704 16:41:24.660" endtime="20230704 16:41:24.958"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="login-button"]</arg>
+<arg>class=oxd-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:30.647" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
-<status status="PASS" starttime="20230704 09:59:30.646" endtime="20230704 09:59:30.865"/>
+<msg timestamp="20230704 16:41:24.959" level="INFO">Clicking button 'class=oxd-button'.</msg>
+<status status="PASS" starttime="20230704 16:41:24.958" endtime="20230704 16:41:26.098"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="add-to-cart-sauce-labs-backpack"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:30.872" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
-<status status="PASS" starttime="20230704 09:59:30.871" endtime="20230704 09:59:31.033"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:30.112" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:26.099" endtime="20230704 16:41:30.112"/>
 </kw>
+<status status="PASS" starttime="20230704 16:41:12.385" endtime="20230704 16:41:30.112"/>
+</kw>
+<kw name="Cliquer dans le menu sur la page « Admin »">
 <kw name="Click Link" library="SeleniumLibrary">
-<arg>//*[@id="shopping_cart_container"]/a</arg>
+<arg>class=oxd-main-menu-item</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:31.037" level="INFO">Clicking link '//*[@id="shopping_cart_container"]/a'.</msg>
-<status status="PASS" starttime="20230704 09:59:31.036" endtime="20230704 09:59:31.194"/>
+<msg timestamp="20230704 16:41:30.115" level="INFO">Clicking link 'class=oxd-main-menu-item'.</msg>
+<status status="PASS" starttime="20230704 16:41:30.114" endtime="20230704 16:41:30.933"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:34.939" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:30.934" endtime="20230704 16:41:34.939"/>
+</kw>
+<status status="PASS" starttime="20230704 16:41:30.113" endtime="20230704 16:41:34.940"/>
+</kw>
+<kw name="Ajouter un utilisateur">
+<kw name="Generate Random String" library="String">
+<var>${employee_username}</var>
+<arg>10</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230704 16:41:34.944" level="INFO">${employee_username} = sDVSrueJsk</msg>
+<status status="PASS" starttime="20230704 16:41:34.943" endtime="20230704 16:41:34.944"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${employee_username}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230704 16:41:34.946" level="INFO">${employee_username} = sDVSrueJsk</msg>
+<status status="PASS" starttime="20230704 16:41:34.944" endtime="20230704 16:41:34.946"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="remove-sauce-labs-backpack"]</arg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:31.196" level="INFO">Clicking button '//*[@id="remove-sauce-labs-backpack"]'.</msg>
-<status status="PASS" starttime="20230704 09:59:31.195" endtime="20230704 09:59:31.349"/>
+<msg timestamp="20230704 16:41:34.948" level="INFO">Clicking button '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20230704 16:41:34.946" endtime="20230704 16:41:35.639"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="add-to-cart-sauce-labs-backpack"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230704 09:59:31.352" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
-<msg timestamp="20230704 09:59:31.606" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230704 09:59:31.607" level="FAIL">Button with locator '//*[@id="add-to-cart-sauce-labs-backpack"]' not found.</msg>
-<status status="FAIL" starttime="20230704 09:59:31.350" endtime="20230704 09:59:31.610"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:39.646" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:35.640" endtime="20230704 16:41:39.646"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="shopping_cart_container"]/a</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.611" endtime="20230704 09:59:31.611"/>
+<kw name="Generate Random String" library="String">
+<var>${employe_password}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230704 16:41:39.647" level="INFO">${employe_password} = 2ZCm7ftc98</msg>
+<status status="PASS" starttime="20230704 16:41:39.646" endtime="20230704 16:41:39.647"/>
 </kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Sauce Labs Backpack</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.613" endtime="20230704 09:59:31.613"/>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${employe_password}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230704 16:41:39.648" level="INFO">${employe_password} = 2ZCm7ftc98</msg>
+<status status="PASS" starttime="20230704 16:41:39.647" endtime="20230704 16:41:39.648"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="checkout"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.613" endtime="20230704 09:59:31.613"/>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>(//div[@class="oxd-select-text-input"])[1]</arg>
+<arg>ARROW_DOWN</arg>
+<arg>ARROW_DOWN</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:41:39.649" level="INFO">Sending key(s) ('ARROW_DOWN', 'ARROW_DOWN', 'ENTER') to (//div[@class="oxd-select-text-input"])[1] element.</msg>
+<msg timestamp="20230704 16:41:39.987" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg timestamp="20230704 16:41:39.988" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg timestamp="20230704 16:41:40.011" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg timestamp="20230704 16:41:40.011" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg timestamp="20230704 16:41:40.044" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:41:40.044" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:41:39.648" endtime="20230704 16:41:40.064"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:42.067" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:40.065" endtime="20230704 16:41:42.067"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:first-name</arg>
-<arg>John</arg>
+<arg>//label[text()="Employee Name"]/following::input[1]</arg>
+<arg>${EMPLOYEE_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.614" endtime="20230704 09:59:31.614"/>
+<msg timestamp="20230704 16:41:42.069" level="INFO">Typing text 'a' into text field '//label[text()="Employee Name"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:41:42.067" endtime="20230704 16:41:42.268"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:46.276" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:42.268" endtime="20230704 16:41:46.276"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//label[text()="Employee Name"]/following::input[1]</arg>
+<arg>ARROW_DOWN</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:41:46.278" level="INFO">Sending key(s) ('ARROW_DOWN', 'ENTER') to //label[text()="Employee Name"]/following::input[1] element.</msg>
+<msg timestamp="20230704 16:41:46.566" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg timestamp="20230704 16:41:46.567" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg timestamp="20230704 16:41:46.585" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:41:46.585" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:41:46.276" endtime="20230704 16:41:46.605"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:48.621" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:46.605" endtime="20230704 16:41:48.621"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>(//div[@class="oxd-select-text-input"])[2]</arg>
+<arg>ARROW_DOWN</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:41:48.622" level="INFO">Sending key(s) ('ARROW_DOWN', 'ENTER') to (//div[@class="oxd-select-text-input"])[2] element.</msg>
+<msg timestamp="20230704 16:41:48.930" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg timestamp="20230704 16:41:48.930" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<msg timestamp="20230704 16:41:48.953" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:41:48.953" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:41:48.621" endtime="20230704 16:41:48.973"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:50.981" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:48.974" endtime="20230704 16:41:50.981"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:last-name</arg>
-<arg>Doe</arg>
+<arg>//label[text()="Username"]/following::input[1]</arg>
+<arg>${employee_username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.614" endtime="20230704 09:59:31.614"/>
+<msg timestamp="20230704 16:41:50.982" level="INFO">Typing text 'sDVSrueJsk' into text field '//label[text()="Username"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:41:50.981" endtime="20230704 16:41:51.206"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:54.214" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:51.206" endtime="20230704 16:41:54.214"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:postal-code</arg>
-<arg>75000</arg>
+<arg>//label[text()="Password"]/following::input[1]</arg>
+<arg>${employe_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.615" endtime="20230704 09:59:31.615"/>
+<msg timestamp="20230704 16:41:54.216" level="INFO">Typing text '2ZCm7ftc98' into text field '//label[text()="Password"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:41:54.215" endtime="20230704 16:41:54.464"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="continue"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.615" endtime="20230704 09:59:31.615"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:41:57.480" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:54.464" endtime="20230704 16:41:57.480"/>
 </kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Thank you for your order</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20230704 09:59:31.616" endtime="20230704 09:59:31.616"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//label[text()="Confirm Password"]/following::input[1]</arg>
+<arg>${employe_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:41:57.482" level="INFO">Typing text '2ZCm7ftc98' into text field '//label[text()="Confirm Password"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:41:57.481" endtime="20230704 16:41:57.727"/>
 </kw>
-<status status="FAIL" starttime="20230704 09:59:25.225" endtime="20230704 09:59:31.617">Button with locator '//*[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[text()=" Save "]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230704 16:41:57.728" level="INFO">Clicking element '//button[text()=" Save "]'.</msg>
+<status status="PASS" starttime="20230704 16:41:57.727" endtime="20230704 16:41:57.822"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:03.829" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20230704 16:41:57.822" endtime="20230704 16:42:03.829"/>
+</kw>
+<status status="PASS" starttime="20230704 16:41:34.941" endtime="20230704 16:42:03.829"/>
+</kw>
+<kw name="Recherche l’utilisateur précédemment créé">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//label[text()="Username"]/following::input[1]</arg>
+<arg>${employee_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:42:03.832" level="INFO">Typing text 'sDVSrueJsk' into text field '//label[text()="Username"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:42:03.831" endtime="20230704 16:42:04.137"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:08.138" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:04.137" endtime="20230704 16:42:08.138"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//label[text()="Username"]/following::input[1]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:42:08.140" level="INFO">Sending key(s) ('ENTER',) to //label[text()="Username"]/following::input[1] element.</msg>
+<msg timestamp="20230704 16:42:08.441" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:42:08.442" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:42:08.138" endtime="20230704 16:42:08.475"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:12.490" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:08.475" endtime="20230704 16:42:12.490"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//label[text()="Employee Name"]/following::input[1]</arg>
+<arg>${EMPLOYEE_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:42:12.491" level="INFO">Typing text 'a' into text field '//label[text()="Employee Name"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:42:12.490" endtime="20230704 16:42:12.652"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:16.662" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:12.652" endtime="20230704 16:42:16.662"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//label[text()="Employee Name"]/following::input[1]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:42:16.664" level="INFO">Sending key(s) ('ENTER',) to //label[text()="Employee Name"]/following::input[1] element.</msg>
+<msg timestamp="20230704 16:42:16.952" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:42:16.952" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:42:16.663" endtime="20230704 16:42:16.962"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:20.972" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:16.962" endtime="20230704 16:42:20.972"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//label[text()="User Role"]/following::input[1]</arg>
+<arg>${USER_ROLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:42:20.973" level="INFO">Typing text 'ESS' into text field '//label[text()="User Role"]/following::input[1]'.</msg>
+<status status="PASS" starttime="20230704 16:42:20.972" endtime="20230704 16:42:21.171"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:25.185" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:21.171" endtime="20230704 16:42:25.185"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//label[text()="User Role"]/following::input[1]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230704 16:42:25.188" level="INFO">Sending key(s) ('ENTER',) to //label[text()="User Role"]/following::input[1] element.</msg>
+<msg timestamp="20230704 16:42:25.512" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230704 16:42:25.512" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230704 16:42:25.185" endtime="20230704 16:42:25.529"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230704 16:42:29.560" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230704 16:42:25.529" endtime="20230704 16:42:29.560"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//label[text()="Status"]/following::input[1]</arg>
+<arg>${STATUS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 16:42:29.563" level="INFO">Typing text 'Enabled' into text field '//label[text()="Status"]/following::input[1]'.</msg>
+<msg timestamp="20230704 16:42:30.433" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-100.png"&gt;&lt;img src="selenium-screenshot-100.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230704 16:42:30.434" level="FAIL">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0031A813+48355]
+	(No symbol) [0x002AC4B1]
+	(No symbol) [0x001B5220]
+	(No symbol) [0x001DB37A]
+	(No symbol) [0x001FA73C]
+	(No symbol) [0x001D9A36]
+	(No symbol) [0x001FAA94]
+	(No symbol) [0x0020C922]
+	(No symbol) [0x001FA536]
+	(No symbol) [0x001D82DC]
+	(No symbol) [0x001D93DD]
+	GetHandleVerifier [0x0057AABD+2539405]
+	GetHandleVerifier [0x005BA78F+2800735]
+	GetHandleVerifier [0x005B456C+2775612]
+	GetHandleVerifier [0x003A51E0+616112]
+	(No symbol) [0x002B5F8C]
+	(No symbol) [0x002B2328]
+	(No symbol) [0x002B240B]
+	(No symbol) [0x002A4FF7]
+	BaseThreadInitThunk [0x772D6BA9+25]
+	RtlGetFullPathName_UEx [0x77E08F9F+1215]
+	RtlGetFullPathName_UEx [0x77E08F6D+1165]
+</msg>
+<status status="FAIL" starttime="20230704 16:42:29.561" endtime="20230704 16:42:30.441"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230704 16:42:30.442" endtime="20230704 16:42:30.442"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//label[text()="Status"]/following::input[1]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20230704 16:42:30.442" endtime="20230704 16:42:30.442"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230704 16:42:30.442" endtime="20230704 16:42:30.442"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[text()=" Search "]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 16:42:30.443" endtime="20230704 16:42:30.443"/>
+</kw>
+<status status="FAIL" starttime="20230704 16:42:03.830" endtime="20230704 16:42:30.443"/>
+</kw>
+<kw name="Modifier les informations de l’utilisateur recherché">
+<status status="NOT RUN" starttime="20230704 16:42:30.445" endtime="20230704 16:42:30.445"/>
+</kw>
+<status status="FAIL" starttime="20230704 16:41:12.378" endtime="20230704 16:42:30.446">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0031A813+48355]
+	(No symbol) [0x002AC4B1]
+	(No symbol) [0x001B5220]
+	(No symbol) [0x001DB37A]
+	(No symbol) [0x001FA73C]
+	(No symbol) [0x001D9A36]
+	(No symbol) [0x001FAA94]
+	(No symbol) [0x0020C922]
+	(No symbol) [0x001FA536]
+	(No symbol) [0x001D82DC]
+	(No symbol) [0x001D93DD]
+	GetHandleVerifier [0x0057AABD+2539405]
+	GetHandleVerifier [0x005BA78F+2800735]
+	GetHandleVerifier [0x005B456C+2775612]
+	GetHandleVerifier [0x003A51E0+616112]
+	(No symbol) [0x002B5F8C]
+	(No symbol) [0x002B2328]
+	(No symbol) [0x002B240B]
+	(No symbol) [0x002A4FF7]
+	BaseThreadInitThunk [0x772D6BA9+25]
+	RtlGetFullPathName_UEx [0x77E08F9F+1215]
+	RtlGetFullPathName_UEx [0x77E08F6D+1165]
+</status>
 </test>
-<status status="FAIL" starttime="20230704 09:59:24.523" endtime="20230704 09:59:31.619"/>
+<status status="FAIL" starttime="20230704 16:41:11.758" endtime="20230704 16:42:30.457"/>
 </suite>
 <statistics>
 <total>
@@ -110,7 +407,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="My First Playwriter">My First Playwriter</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="User Management">User Management</stat>
 </suite>
 </statistics>
 <errors>
