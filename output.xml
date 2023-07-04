@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.11 on win32)" generated="20230704 09:59:24.513" rpa="false" schemaversion="3">
+<suite id="s1" name="My First Playwriter" source="C:\Dev\Code_Qualite_Tests\BeginnersGuide\Examples\my_first_playwriter.robot">
+<test id="s1-t1" name="My First Playwriter Robot Test" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230704 09:59:25.228" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230704 09:59:25.296" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230704 09:59:25.226" endtime="20230704 09:59:29.965"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:29.978" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20230704 09:59:29.970" endtime="20230704 09:59:30.370"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${PWD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:30.375" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20230704 09:59:30.372" endtime="20230704 09:59:30.645"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:30.647" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230704 09:59:30.646" endtime="20230704 09:59:30.865"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:30.872" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230704 09:59:30.871" endtime="20230704 09:59:31.033"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[@id="shopping_cart_container"]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:31.037" level="INFO">Clicking link '//*[@id="shopping_cart_container"]/a'.</msg>
+<status status="PASS" starttime="20230704 09:59:31.036" endtime="20230704 09:59:31.194"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="remove-sauce-labs-backpack"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:31.196" level="INFO">Clicking button '//*[@id="remove-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20230704 09:59:31.195" endtime="20230704 09:59:31.349"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230704 09:59:31.352" level="INFO">Clicking button '//*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<msg timestamp="20230704 09:59:31.606" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230704 09:59:31.607" level="FAIL">Button with locator '//*[@id="add-to-cart-sauce-labs-backpack"]' not found.</msg>
+<status status="FAIL" starttime="20230704 09:59:31.350" endtime="20230704 09:59:31.610"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="shopping_cart_container"]/a</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.611" endtime="20230704 09:59:31.611"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.613" endtime="20230704 09:59:31.613"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="checkout"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.613" endtime="20230704 09:59:31.613"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:first-name</arg>
+<arg>John</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.614" endtime="20230704 09:59:31.614"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:last-name</arg>
+<arg>Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.614" endtime="20230704 09:59:31.614"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:postal-code</arg>
+<arg>75000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.615" endtime="20230704 09:59:31.615"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="continue"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.615" endtime="20230704 09:59:31.615"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Thank you for your order</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230704 09:59:31.616" endtime="20230704 09:59:31.616"/>
+</kw>
+<status status="FAIL" starttime="20230704 09:59:25.225" endtime="20230704 09:59:31.617">Button with locator '//*[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
+</test>
+<status status="FAIL" starttime="20230704 09:59:24.523" endtime="20230704 09:59:31.619"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="My First Playwriter">My First Playwriter</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
